@@ -1,17 +1,21 @@
 ---
 title: Plano zero-cost de autenticação local e Beta fechado
 doc-type: implementation-plan
-status: planned
-last-reviewed: 2026-08-17
+status: in-progress
+last-reviewed: 2026-08-27
 owners:
   - engineering
 related-jira:
   - KAN-27
   - KAN-28
   - KAN-37
+  - KAN-85
   - KAN-86
   - KAN-87
+  - KAN-88
+  - KAN-89
   - KAN-90
+  - KAN-91
   - KAN-105
   - KAN-106
   - KAN-150
@@ -24,11 +28,17 @@ related-jira:
 
 ## Status do guia
 
-Planejamento revisado para custo obrigatório zero. A execução está bloqueada
-pelos cadastros externos, pela implementação pendente da interface de
-autenticação, pela migração do frontend para um plano gratuito compatível e
-pelos gates descritos neste documento. Nenhum secret deve ser copiado para este
-arquivo, Jira, Git, logs ou chat.
+Planejamento revisado para custo obrigatório zero. A KAN-85 entregou o shell de
+sign-in e sessão no frontend; a execução restante está bloqueada pelos cadastros
+externos, pelas integrações de autenticação, pelos guards e pelos gates descritos
+neste documento. O frontend permanece temporariamente na Vercel Hobby; a
+migração de hosting foi removida do caminho crítico. Nenhum secret deve ser
+copiado para este arquivo, Jira, Git, logs ou chat.
+
+Atualização de handoff em 2026-08-27: KAN-150, KAN-86 e KAN-87 foram
+concluídas; a KAN-105 está em revisão na PR web `#74`. A próxima unidade de
+implementação prevista é KAN-88. Para a fotografia operacional usada na troca
+de máquina, consultar `machine-transfer-handoff-2026-08-27.md`.
 
 ## Decisão executiva
 
@@ -94,7 +104,7 @@ e não comercial; por isso essa decisão deve ser reavaliada antes de transforma
 o piloto privado em operação comercial pública. Netlify, Cloudflare ou um VPS
 próprio continuam como opções futuras, sem bloquear KAN-27.
 
-## Estado real encontrado em 2026-08-17
+## Estado real encontrado em 2026-08-23
 
 ### Backend
 
@@ -121,15 +131,17 @@ Já existe:
 - contrato de variáveis públicas;
 - cliente gerado da API de autenticação;
 - hook inicial de Google Sign-In;
-- store de sessão e refresh;
+- shell funcional de `/sign-in`, hidratação e estados de sessão entregues pela
+  KAN-85;
+- store de sessão, refresh e retorno seguro;
 - protótipos de Google e magic link.
 
 Ainda falta:
 
-- substituir o placeholder atual de `/sign-in` pela interface funcional;
 - integrar o botão oficial Google;
 - integrar One Tap e suas regras de supressão/fallback;
 - implementar as telas funcionais de solicitação e consumo de magic link;
+- proteger rotas autenticadas e implementar sign-out consistente;
 - criar os E2E funcionais de autenticação.
 
 Portanto, credenciais válidas não tornam o login utilizável sozinhas.
@@ -171,16 +183,20 @@ deve existir aviso de privacidade e procedimento de exclusão.
 
 | Ordem | Jira | Resultado esperado |
 | --- | --- | --- |
+| 0 | KAN-85 | Shell de sign-in e sessão validado e concluído |
 | 1 | KAN-150 | Google Cloud nonprod, consentimento e clientes Local/Beta |
 | 2 | KAN-86 | Botão Google funcional no frontend |
 | 3 | KAN-87 | One Tap funcional com fallback |
 | 4 | KAN-105 | Magic link funcional no frontend |
-| 5 | KAN-90 | Happy path web de autenticação validado |
-| 6 | KAN-106 | Magic link E2E com Mailpit validado |
-| 7 | KAN-156 | Conta, domínio e credencial Resend Free do Beta |
+| 5 | KAN-88 | Rotas protegidas e retorno pós-login |
+| 6 | KAN-89 | Sign-out e limpeza consistente da sessão |
+| 7 | KAN-158 | Cadastro restrito a testadores convidados |
+| 8 | KAN-91 | Sessão expirada validada em E2E |
+| 9 | KAN-90 | Happy path web de autenticação validado |
+| 10 | KAN-106 | Magic link E2E com Mailpit validado |
+| 11 | KAN-156 | Conta, domínio e credencial Resend Free do Beta |
 | Cancelada | KAN-157 | Migração Netlify removida do caminho crítico do Beta |
-| 9 | KAN-158 | Cadastro restrito a testadores convidados |
-| 10 | KAN-27 | Beta completo em Vercel + Render + Neon |
+| 12 | KAN-27 | Beta completo em Vercel + Render + Neon |
 | Adiada | KAN-28 | Produção somente após validação e nova decisão |
 
 KAN-156 foi criada porque KAN-102 registrava somente a decisão do provedor.
@@ -285,7 +301,7 @@ Critérios de saída:
 
 | Repositório/arquivo | Ação futura | Motivo |
 | --- | --- | --- |
-| `reactjs-sandicts-web/src/app/(public)/sign-in/page.tsx` | Editar | Trocar o placeholder pela experiência funcional |
+| `reactjs-sandicts-web/src/app/(public)/sign-in/page.tsx` | Reusar | Shell funcional entregue pela KAN-85 |
 | `reactjs-sandicts-web/src/features/auth/hooks/use-google-sign-in.ts` | Reusar/ajustar | Enviar a credential ao endpoint existente |
 | `reactjs-sandicts-web/src/features/auth/` | Criar componentes focados | Botão GIS, One Tap, magic link e estados |
 | `reactjs-sandicts-web/src/lib/env/public-env.ts` | Manter contrato | Já valida Client ID e flag do One Tap |
@@ -440,7 +456,7 @@ npm run dev
 
 ### 4.2 Implementação KAN-105
 
-1. Substituir o placeholder de `/sign-in` pela interface aprovada.
+1. Compor o magic link dentro do shell funcional de `/sign-in` entregue pela KAN-85.
 2. Implementar solicitação de magic link sem revelar se a conta existe.
 3. Implementar estado de email enviado.
 4. Criar/implementar `/sign-in/magic-link`.
