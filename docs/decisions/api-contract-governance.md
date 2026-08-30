@@ -6,9 +6,9 @@ priority: high
 canonical: docs/decisions/api-contract-governance.md
 related:
   - docs/decisions/shared-documentation-strategy.md
-  - sandicts/nodejs-sandicts-api:docs/ai/api/semantic-api-contracts.md
-  - sandicts/nodejs-sandicts-api:docs/ai/api/error-handling-foundation.md
-  - sandicts/reactjs-sandicts-web:docs/frontend/sandicts-frontend-tech-decisions.md
+  - fradelli/nodejs-sandicts-api:docs/ai/api/semantic-api-contracts.md
+  - fradelli/nodejs-sandicts-api:docs/ai/api/error-handling-foundation.md
+  - fradelli/reactjs-sandicts-web:docs/frontend/sandicts-frontend-tech-decisions.md
 scope: api-contracts, openapi, compatibility, backend, frontend, ci
 read-when:
   - adding or changing a public API endpoint

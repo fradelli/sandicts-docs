@@ -48,7 +48,7 @@ Rules:
 
 - When a Jira task exists, its primary key must be the first characters in the
   PR title.
-- `[NO-JIRA]` is allowed only in `sandicts/sandicts-docs`, when no Jira task
+- `[NO-JIRA]` is allowed only in `fradelli/sandicts-docs`, when no Jira task
   exists and every changed file is documentation or documentation-routing
   metadata.
 - Never use `[NO-JIRA]` for source code, runtime configuration, database

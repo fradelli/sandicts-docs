@@ -12,8 +12,8 @@ related:
   - docs/product/sandicts-player-skill-allocation-model.md
   - docs/product/sandicts-v2-backlog.md
   - docs/decisions/shared-documentation-strategy.md
-  - sandicts/nodejs-sandicts-api:docs/ai/api/error-handling-foundation.md
-  - sandicts/nodejs-sandicts-api:docs/ai/api/zod-swagger-foundation.md
+  - fradelli/nodejs-sandicts-api:docs/ai/api/error-handling-foundation.md
+  - fradelli/nodejs-sandicts-api:docs/ai/api/zod-swagger-foundation.md
 scope: business-rules, backend, marketplace, reservations, matches, payments, player-evolution
 read-when:
   - implementing Sandicts domain modules

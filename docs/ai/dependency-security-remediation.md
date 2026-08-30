@@ -7,8 +7,8 @@ canonical: docs/ai/dependency-security-remediation.md
 related:
   - docs/ai/pull-request-standard.md
   - docs/ai/task-finalization-workflow.md
-  - sandicts/reactjs-sandicts-web:docs/ai/ci-cd/security-audit-remediation.md
-  - sandicts/nodejs-sandicts-api:docs/ai/ci-cd/security-audit-remediation.md
+  - fradelli/reactjs-sandicts-web:docs/ai/ci-cd/security-audit-remediation.md
+  - fradelli/nodejs-sandicts-api:docs/ai/ci-cd/security-audit-remediation.md
 scope: frontend, backend, npm-audit, dependencies, security, jira, pull-requests
 read-when:
   - responding to a dependency audit failure in any Sandicts application
@@ -102,12 +102,12 @@ checking it against the repository's architecture and supported runtime.
 ## Repository validation
 
 Frontend validation is defined in
-`sandicts/reactjs-sandicts-web:docs/ai/ci-cd/security-audit-remediation.md` and
+`fradelli/reactjs-sandicts-web:docs/ai/ci-cd/security-audit-remediation.md` and
 must include clean install, audit, quality, tests, generated API contract, and
 build.
 
 Backend validation is defined in
-`sandicts/nodejs-sandicts-api:docs/ai/ci-cd/security-audit-remediation.md` and
+`fradelli/nodejs-sandicts-api:docs/ai/ci-cd/security-audit-remediation.md` and
 must include clean install, audit, lint, typecheck, tests, OpenAPI contract, and
 build.
 
