@@ -14,9 +14,9 @@
 - Sandicts app workspaces are commonly multi-repo. Do not assume the workspace root is the GitHub repo.
 - Resolve the target repo from the explicit user request or from the subproject `git remote -v`.
 - Known repositories:
-  - `sandicts/nodejs-sandicts-api`
-  - `sandicts/reactjs-sandicts-web`
-  - `sandicts/sandicts-docs`
+  - `fradelli/nodejs-sandicts-api`
+  - `fradelli/reactjs-sandicts-web`
+  - `fradelli/sandicts-docs`
 - When repo, PR, issue, branch, or URL is known, call the repo-specific GitHub tool directly.
 - Use broad GitHub search only for file/content discovery when the target is not explicit.
 

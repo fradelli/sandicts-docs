@@ -26,7 +26,7 @@ do-not-read-when:
 ## Purpose
 
 Define the standard workflow for finishing shared documentation work in
-`sandicts/sandicts-docs`.
+`fradelli/sandicts-docs`.
 
 Use the same PR title and PR body structure as the frontend and backend
 repositories. Repository-specific differences belong in validation details, not
@@ -65,7 +65,7 @@ Rules:
 
 - When a Jira task exists, its primary key must be the first characters in the
   PR title.
-- `[NO-JIRA]` is allowed only in `sandicts/sandicts-docs`, when no Jira task
+- `[NO-JIRA]` is allowed only in `fradelli/sandicts-docs`, when no Jira task
   exists and the PR contains documentation or documentation-routing metadata
   only.
 - Do not use `[NO-JIRA]` for source code, runtime configuration, database
@@ -139,10 +139,10 @@ Do not mark lint, typecheck, tests, build, or dependency audit as complete
 unless this repository has those commands configured and they actually ran.
 
 For frontend repository changes, follow
-`sandicts/reactjs-sandicts-web:docs/ai/task-finalization-workflow.md`.
+`fradelli/reactjs-sandicts-web:docs/ai/task-finalization-workflow.md`.
 
 For backend repository changes, follow
-`sandicts/nodejs-sandicts-api:docs/ai/task-finalization-workflow.md`.
+`fradelli/nodejs-sandicts-api:docs/ai/task-finalization-workflow.md`.
 
 For dependency audit remediation in frontend or backend, follow
 `docs/ai/dependency-security-remediation.md`. Deliver one isolated application

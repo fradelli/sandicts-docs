@@ -11,10 +11,10 @@ related:
   - docs/product/sandicts-open-match-implementation-roadmap.md
   - docs/product/sandicts-academy-plan-model.md
   - docs/business-rules/sandicts-business-rules.md
-  - sandicts/reactjs-sandicts-web:docs/frontend/sandicts-frontend-tech-decisions.md
-  - sandicts/reactjs-sandicts-web:docs/frontend/sandicts-mvp-delivery-roadmap.md
-  - sandicts/reactjs-sandicts-web:docs/frontend/sandicts-frontend-planning.md
-  - sandicts/reactjs-sandicts-web:docs/frontend/discovery/sandicts-mvp-frontend-roadmap-draft.md
+  - fradelli/reactjs-sandicts-web:docs/frontend/sandicts-frontend-tech-decisions.md
+  - fradelli/reactjs-sandicts-web:docs/frontend/sandicts-mvp-delivery-roadmap.md
+  - fradelli/reactjs-sandicts-web:docs/frontend/sandicts-frontend-planning.md
+  - fradelli/reactjs-sandicts-web:docs/frontend/discovery/sandicts-mvp-frontend-roadmap-draft.md
 scope: product, mvp, frontend, backend, figma, jira, api-contracts
 read-when:
   - definir fluxos de usuario do MVP Sandicts
@@ -2191,7 +2191,7 @@ Regras:
 
 Para o roadmap detalhado de frontend/fullstack, incluindo tarefas de decisao,
 prototipo, documentacao, fundacao, implementacao e validacao, usar
-`sandicts/reactjs-sandicts-web:docs/frontend/sandicts-mvp-delivery-roadmap.md`.
+`fradelli/reactjs-sandicts-web:docs/frontend/sandicts-mvp-delivery-roadmap.md`.
 
 ## Decisoes Abertas Atuais
 

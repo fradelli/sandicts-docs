@@ -8,8 +8,8 @@ related:
   - docs/ai/dependency-security-remediation.md
   - docs/ai/task-finalization-workflow.md
   - .github/pull_request_template.md
-  - sandicts/reactjs-sandicts-web:.github/pull_request_template.md
-  - sandicts/nodejs-sandicts-api:.github/pull_request_template.md
+  - fradelli/reactjs-sandicts-web:.github/pull_request_template.md
+  - fradelli/nodejs-sandicts-api:.github/pull_request_template.md
 scope: github, pull-requests, pr-title, pr-description, validation
 read-when:
   - writing, opening, or updating a Sandicts pull request
@@ -25,8 +25,8 @@ do-not-read-when:
 ## Purpose
 
 Keep pull request titles and descriptions consistent across
-`sandicts/nodejs-sandicts-api`, `sandicts/reactjs-sandicts-web`, and
-`sandicts/sandicts-docs`.
+`fradelli/nodejs-sandicts-api`, `fradelli/reactjs-sandicts-web`, and
+`fradelli/sandicts-docs`.
 
 Repository-specific differences belong in validation details and notes, not in
 a different PR body shape.
@@ -56,13 +56,13 @@ Tracking rules:
 
 - when a Jira task exists, its primary key must be the first characters in the
   PR title
-- `[NO-JIRA]` is allowed only in `sandicts/sandicts-docs`, when no Jira task
+- `[NO-JIRA]` is allowed only in `fradelli/sandicts-docs`, when no Jira task
   exists and every changed file is documentation or documentation-routing
   metadata
 - `[NO-JIRA]` must not be used to bypass Jira for source code, runtime
   configuration, database schema, infrastructure, or product implementation
 - new shared product and business rules without Jira should normally be
-  delivered in `sandicts/sandicts-docs`
+  delivered in `fradelli/sandicts-docs`
 - documentation PRs in frontend or backend repositories continue to require a
   Jira key
 - if a Jira task is created or discovered before merge, rename the PR to start
@@ -162,7 +162,7 @@ Rules:
 
 ## Repository Validation
 
-For `sandicts/nodejs-sandicts-api`:
+For `fradelli/nodejs-sandicts-api`:
 
 - docs-only: run `git diff --check`
 - backend app, API, auth, persistence, config, or startup-sensitive changes:
@@ -173,7 +173,7 @@ For `sandicts/nodejs-sandicts-api`:
 - dependency or security changes: run the repository dependency audit command
   or document why it was not applicable
 
-For `sandicts/reactjs-sandicts-web`:
+For `fradelli/reactjs-sandicts-web`:
 
 - docs-only: run `git diff --check`
 - frontend app, configuration, or setup changes: run `npm run lint`,
@@ -186,7 +186,7 @@ For dependency audit remediation in either application repository, also follow
 keep the audit blocking at `moderate`, validate from `npm ci`, and update any
 unrelated blocked PR only after the remediation reaches its integration branch.
 
-For `sandicts/sandicts-docs`:
+For `fradelli/sandicts-docs`:
 
 - run `git diff --check`
 - inspect changed Markdown frontmatter, links, source-of-truth routing, and

@@ -12,7 +12,7 @@ related:
   - docs/product/sandicts-player-skill-allocation-model.md
   - docs/product/sandicts-v2-backlog.md
   - docs/decisions/shared-documentation-strategy.md
-  - sandicts/nodejs-sandicts-api:docs/ai/api/zod-swagger-foundation.md
+  - fradelli/nodejs-sandicts-api:docs/ai/api/zod-swagger-foundation.md
 scope: product, marketplace, sports, sand-courts, mvp
 read-when:
   - defining Sandicts features or modules

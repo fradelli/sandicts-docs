@@ -7,8 +7,8 @@ canonical: docs/decisions/frontend-deployment-target.md
 related:
   - docs/decisions/shared-documentation-strategy.md
   - docs/decisions/api-contract-governance.md
-  - sandicts/reactjs-sandicts-web:docs/frontend/sandicts-deployment-environments.md
-  - sandicts/nodejs-sandicts-api:docs/ai/config/configuration-foundation.md
+  - fradelli/reactjs-sandicts-web:docs/frontend/sandicts-deployment-environments.md
+  - fradelli/nodejs-sandicts-api:docs/ai/config/configuration-foundation.md
 scope: frontend, backend, deployment, environments, vercel, cors, cookies, auth
 read-when:
   - configuring frontend or backend deployment environments

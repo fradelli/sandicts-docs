@@ -101,9 +101,9 @@ cd sandicts
 mkdir apps
 cd apps
 
-gh repo clone sandicts/sandicts-docs
-gh repo clone sandicts/nodejs-sandicts-api
-gh repo clone sandicts/reactjs-sandicts-web
+gh repo clone fradelli/sandicts-docs
+gh repo clone fradelli/nodejs-sandicts-api
+gh repo clone fradelli/reactjs-sandicts-web
 ```
 
 The expected integration branches are:
