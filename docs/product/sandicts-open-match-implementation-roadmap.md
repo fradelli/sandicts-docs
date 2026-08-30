@@ -28,42 +28,41 @@ testable delivery increments. It does not replace the domain rules.
 
 Jira audit date: 2026-08-08.
 
-No Jira issue was created or changed during this audit.
+The initial audit was read-only. After explicit approval on 2026-08-08, the
+existing Epic and share task were aligned and the missing child Stories were
+created.
 
 ## Current Jira Alignment
 
-Existing items:
+Current items:
 
-- `KAN-54` - `[MVP] Open Matches` Epic
-- `KAN-127` - `[Open Matches] Add shareable invitation links and social
-  previews`, child Task of `KAN-54`
+- `KAN-54` - `[MVP] Open Matches` Epic, updated with the canonical scope,
+  success criteria, delivery increments, exclusions, and open decisions
+- `KAN-151` - `[Open Matches] Build core match model and creation/discovery
+  flow`, required Story
+- `KAN-152` - `[Open Matches] Implement participation, approval, guests, and
+  waitlist`, required Story
+- `KAN-127` - `[Open Matches] Add shareable match links and social previews`,
+  retained and aligned Task
+- `KAN-153` - `[Open Matches] Synchronize reservations and operational
+  updates`, required Story
+- `KAN-154` - `[Open Matches] Complete matches and enable rebook or rematch`,
+  required Story
+- `KAN-155` - `[Open Matches] Suggest compatible players with deterministic
+  rules`, optional Low-priority Story after core validation
 
-Assessment:
+Delivery dependency links:
 
-- update `KAN-54`; its current description covers only create/join/leave/cancel,
-  has outdated document paths, and does not represent the accepted MVP model
-- retain `KAN-127`; it already covers stable links, WhatsApp/native sharing,
-  privacy-safe previews, authentication return, and crawler-safe reads
-- make a small future edit to `KAN-127` only to link the new canonical model and
-  use the `invite_only` visibility terminology; do not create a duplicate share
-  task
-- create new child work for the remaining vertical slices only when Jira
-  planning is authorized
+- `KAN-151` blocks `KAN-152`
+- `KAN-152` blocks `KAN-127` and `KAN-153`
+- `KAN-127` and `KAN-153` block `KAN-154`
+- `KAN-154` blocks optional `KAN-155`
 
-Recommended required child issues under `KAN-54`:
+All children remain in `A fazer`. Required Stories and `KAN-127` have Medium
+priority; optional `KAN-155` has Low priority.
 
-1. `[Open Matches] Build core match model and creation/discovery flow`
-2. `[Open Matches] Implement participation, approval, guests, and waitlist`
-3. retain `KAN-127` for shared links and social previews
-4. `[Open Matches] Synchronize reservations and operational updates`
-5. `[Open Matches] Complete matches and enable rebook or rematch`
-
-Recommended non-blocking child after the controlled MVP release:
-
-6. `[Open Matches] Suggest compatible players with deterministic rules`
-
-Each item should be a vertical outcome with backend contract, frontend states,
-and integrated validation. Add backend/frontend/E2E subtasks only when separate
+Each item is a vertical outcome with backend contract, frontend states, and
+integrated validation. Add backend/frontend/E2E subtasks only when separate
 ownership or scheduling makes them useful.
 
 ## Decision Gate
@@ -255,7 +254,7 @@ Every increment must cover:
 
 Dependencies:
 
-`Increment 1 -> Increment 2 -> KAN-127 -> Increment 4 -> Increment 5`
+`KAN-151 -> KAN-152 -> {KAN-127, KAN-153} -> KAN-154 -> KAN-155 (optional)`
 
 Increment 4 event contracts can be designed in parallel with Increment 2 after
 the core lifecycle is stable. Increment 6 starts only after the core metrics can
