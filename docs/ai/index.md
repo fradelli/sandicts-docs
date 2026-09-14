@@ -34,6 +34,7 @@ of files for the current task.
 
 | Document | Role |
 | --- | --- |
+| [`docs/engineering/code-semantics.md`](../engineering/code-semantics.md) | Shared code naming criteria and implementation vocabulary |
 | [`docs/product/sandicts-product-context.md`](../product/sandicts-product-context.md) | Product context and core marketplace direction |
 | [`docs/product/sandicts-mvp-scope.md`](../product/sandicts-mvp-scope.md) | Approved MVP scope and explicit exclusions |
 | [`docs/product/sandicts-open-match-model.md`](../product/sandicts-open-match-model.md) | Canonical MVP, V2, and future open-match domain model |

@@ -59,6 +59,13 @@ Use these names consistently in docs, Jira, backend, frontend, and AI routing.
 
 ## Naming Rules
 
+The current authentication implementation names the product's signed-in
+`User` identity `Account`. Existing API responses use `account`, and session
+and profile relationships use `accountId`; this is not a second user entity.
+Keep those technical names compatible until an explicit migration changes them.
+For function names, commands, queries, and prototype identifiers, follow
+[`Code Semantics`](../engineering/code-semantics.md).
+
 - Do not use `Partner` as the current domain entity name.
 - Use `Organization` for marketplace supply-side operators that expose courts,
   venues, arenas, clubs, or events.
